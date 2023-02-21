@@ -67,4 +67,5 @@ class StandardCollectionTest {
 			.sorted((e1, e2) -> Long.compare(e2.getValue(), e1.getValue()))
 			.forEach(e-> System.out.printf("%d: %d%n", e.getKey(), e.getValue()));
 	}
+
 }
