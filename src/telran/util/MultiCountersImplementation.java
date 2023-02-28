@@ -62,12 +62,5 @@ public class MultiCountersImplementation implements MultiCounters {
 		Entry<Integer, HashSet<Object>> res = counter.lastEntry();
 		return res == null ? new HashSet<>() : res.getValue();
 	}
-//	
-//	public void trace() {
-//		System.out.println("In set counters:");
-//		counter.forEach(el -> System.out.println(el.obj + ": " + el.counter));
-//		System.out.println("In map:");
-//		hash.forEach((k, v) -> System.out.println("Key:" + k + ", v: " + v.counter));
-//	}
-//
+
 }
