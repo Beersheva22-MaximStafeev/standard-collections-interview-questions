@@ -20,14 +20,15 @@ public class MultiCountersImplementation implements MultiCounters {
 		}
 		hash.put(item, res); //O[1]
 		
-		HashSet<Object> set = counter.get(res); //O[LogN]
-		if (set != null) {
-			set.add(item); //O[1]
-		} else {
-			set = new HashSet<>();
-			set.add(item); //O[1]
-			counter.put(res, set); //O[LogN]
-		}
+		counter.computeIfAbsent(res, k -> new HashSet<>()).add(item);
+//		HashSet<Object> set = counter.get(res); //O[LogN]
+//		if (set != null) {
+//			set.add(item); //O[1]
+//		} else {
+//			set = new HashSet<>();
+//			set.add(item); //O[1]
+//			counter.put(res, set); //O[LogN]
+//		}
 		return res;
 	}
 

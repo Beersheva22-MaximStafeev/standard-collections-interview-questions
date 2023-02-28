@@ -108,6 +108,7 @@ class StandardCollectionTest {
 	}
 
 	private TreeSet<Integer> createAndIterateTreeInOrder(int[] ar) {
+//		Comparator<Integer> comp = Comparator.comparingInt(this::getSumOfDigits);
 		Comparator<Integer> comp = (a,b) -> Integer.compare(getSumOfDigits(a), getSumOfDigits(b));
 		TreeSet<Integer> set = new TreeSet<>(comp);
 		for (int i : ar) {
