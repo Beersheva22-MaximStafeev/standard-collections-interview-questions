@@ -5,18 +5,18 @@ import static org.junit.jupiter.api.Assertions.*;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
-import telran.util.AutoCompeteDictionary;
+import telran.util.WordsImplementation;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class AutoCompeteDictionaryTest {
-	String[] dict = new String[] {"one", "two", "three", "four", "five", "six", "seven", "once", "onto"};
-	AutoCompeteDictionary dictionary;
+class WordsImplementationTest {
+	String[] dict = new String[] {"one", "two", "three", "Four", "fiVe", "six", "seven", "Once", "onto"};
+	WordsImplementation dictionary;
 
 	@BeforeEach
 	void setUp() throws Exception {
-		dictionary = new AutoCompeteDictionary();
+		dictionary = new WordsImplementation();
 		for (String word: dict) {
 			dictionary.addWord(word);
 		}
@@ -45,8 +45,8 @@ class AutoCompeteDictionaryTest {
 	
 	void runTest(String prefix) {
 		assertIterableEquals(
-				Arrays.stream(dict).filter(el -> el.startsWith(prefix)).collect(Collectors.toSet()),				
-				dictionary.autoCompete(prefix));
+				Arrays.stream(dict).filter(el -> el.toLowerCase().startsWith(prefix.toLowerCase())).sorted(String::compareToIgnoreCase).collect(Collectors.toList()),				
+				dictionary.getWordsByPrefix(prefix));
 	}
 
 }

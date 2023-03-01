@@ -1,4 +1,4 @@
-package telran.util;
+package telran.my.temp;
 
 import java.util.*;
 import java.util.Map.Entry;
@@ -17,6 +17,7 @@ public class AutoCompeteDictionary {
 		}
 
 		public HashSet<String> getWords(String prefix) {
+			// FIX ME
 			HashSet<String> res = new HashSet<>();
 			if (prefix.length() > 0) {
 				Dictionary endings = dict.get(prefix.charAt(0));
