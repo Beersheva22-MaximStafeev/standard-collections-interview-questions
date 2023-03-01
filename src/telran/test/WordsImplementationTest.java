@@ -24,6 +24,7 @@ class WordsImplementationTest {
 
 	@Test
 	void test() {
+		assertFalse(dictionary.addWord("Two"));
 		runTest("one");
 		runTest("");
 		runTest("o");
@@ -41,6 +42,7 @@ class WordsImplementationTest {
 				}
 			}
 		}
+		assertTrue(dictionary.addWord("adfasf"));
 	}
 	
 	void runTest(String prefix) {
