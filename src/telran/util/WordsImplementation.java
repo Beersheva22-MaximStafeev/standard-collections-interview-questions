@@ -6,7 +6,7 @@ import java.util.TreeSet;
 import java.util.stream.Collectors;
 
 public class WordsImplementation implements Words {
-	TreeSet<String> dictionary = new TreeSet<>(String::compareToIgnoreCase);
+	private TreeSet<String> dictionary = new TreeSet<>(String::compareToIgnoreCase);
 	
 	@Override
 	public boolean addWord(String word) {
